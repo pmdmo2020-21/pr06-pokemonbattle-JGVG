@@ -17,7 +17,7 @@ class SelectionActivity : AppCompatActivity() {
         const val EXTRA_PK_ID = "EXTRA_PK_ID"
 
         fun newIntent(context: Context, containerId: Int, pokemonId: Int): Intent{
-            return Intent(context, this::class.java)
+            return Intent(context, SelectionActivity::class.java)
                 .putExtra(EXTRA_CONTAINER, containerId)
                 .putExtra(EXTRA_PK_ID, pokemonId)
         }
