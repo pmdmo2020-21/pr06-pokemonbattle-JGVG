@@ -7,6 +7,110 @@
     android:layout_height="match_parent"
     tools:context=".ui.battle.BattleActivity">
 
-    <!-- TODO -->
+    <View
+        android:id="@+id/contain_01"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/green_50"
+        app:layout_constraintBottom_toTopOf="@+id/contain_02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/contain_02"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:background="@color/purple_50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/contain_03"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contain_02"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageViewPokemon01"
+        android:layout_marginLeft="@dimen/img_margin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/contain_01"
+        app:layout_constraintStart_toStartOf="@+id/contain_01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textSize="@dimen/text_size"
+        android:id="@+id/textViewPokemon01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/contain_01"
+        app:layout_constraintEnd_toEndOf="@+id/contain_01"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPokemon01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewVersus"
+        android:layout_width="0dp"
+        android:layout_height="158dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPokemon02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPokemon01"
+        app:srcCompat="@drawable/versus" />
+
+    <ImageView
+        android:layout_marginRight="@dimen/img_margin"
+        android:id="@+id/imageViewPokemon02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/contain_02"
+        app:layout_constraintEnd_toEndOf="@+id/contain_02"
+        app:layout_constraintTop_toBottomOf="@+id/contain_01" />
+
+    <TextView
+        android:id="@+id/textViewPokemon02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/contain_02"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewPokemon02"
+        app:layout_constraintStart_toStartOf="@+id/contain_02"
+        app:layout_constraintTop_toBottomOf="@+id/contain_01" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
+        android:text="@string/message_rules"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="@+id/contain_03"
+        app:layout_constraintStart_toStartOf="@+id/contain_03"
+        app:layout_constraintTop_toBottomOf="@+id/contain_02" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_fight"
+        app:layout_constraintBottom_toBottomOf="@+id/contain_03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/contain_03"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
