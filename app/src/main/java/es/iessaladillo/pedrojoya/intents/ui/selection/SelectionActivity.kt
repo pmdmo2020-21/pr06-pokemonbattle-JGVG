@@ -80,10 +80,18 @@ class SelectionActivity : AppCompatActivity() {
         b.radioButtonPokemon3.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon3.id)}
         b.radioButtonPokemon4.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon4.id)}
         b.radioButtonPokemon5.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon5.id)}
+
+        b.imageViewPokemon0.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon0.id)}
+        b.imageViewPokemon1.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon1.id)}
+        b.imageViewPokemon2.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon2.id)}
+        b.imageViewPokemon3.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon3.id)}
+        b.imageViewPokemon4.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon4.id)}
+        b.imageViewPokemon5.setOnClickListener{controlOfUncheckeds(b.radioButtonPokemon5.id)}
     }
 
     private fun controlOfUncheckeds(id: Int) = when (id) {
         b.radioButtonPokemon0.id -> {
+            b.radioButtonPokemon0.isChecked = true
             b.radioButtonPokemon1.isChecked = false
             b.radioButtonPokemon2.isChecked = false
             b.radioButtonPokemon3.isChecked = false
@@ -92,38 +100,43 @@ class SelectionActivity : AppCompatActivity() {
         }
         b.radioButtonPokemon1.id -> {
             b.radioButtonPokemon0.isChecked = false
+            b.radioButtonPokemon1.isChecked = true
             b.radioButtonPokemon2.isChecked = false
             b.radioButtonPokemon3.isChecked = false
             b.radioButtonPokemon4.isChecked = false
             b.radioButtonPokemon5.isChecked = false
         }
         b.radioButtonPokemon2.id -> {
-            b.radioButtonPokemon1.isChecked = false
             b.radioButtonPokemon0.isChecked = false
+            b.radioButtonPokemon1.isChecked = false
+            b.radioButtonPokemon2.isChecked = true
             b.radioButtonPokemon3.isChecked = false
             b.radioButtonPokemon4.isChecked = false
             b.radioButtonPokemon5.isChecked = false
         }
         b.radioButtonPokemon3.id -> {
+            b.radioButtonPokemon0.isChecked = false
             b.radioButtonPokemon1.isChecked = false
             b.radioButtonPokemon2.isChecked = false
-            b.radioButtonPokemon0.isChecked = false
+            b.radioButtonPokemon3.isChecked = true
             b.radioButtonPokemon4.isChecked = false
             b.radioButtonPokemon5.isChecked = false
         }
         b.radioButtonPokemon4.id -> {
+            b.radioButtonPokemon0.isChecked = false
             b.radioButtonPokemon1.isChecked = false
             b.radioButtonPokemon2.isChecked = false
             b.radioButtonPokemon3.isChecked = false
-            b.radioButtonPokemon0.isChecked = false
+            b.radioButtonPokemon4.isChecked = true
             b.radioButtonPokemon5.isChecked = false
         }
         else -> {
+            b.radioButtonPokemon0.isChecked = false
             b.radioButtonPokemon1.isChecked = false
             b.radioButtonPokemon2.isChecked = false
             b.radioButtonPokemon3.isChecked = false
             b.radioButtonPokemon4.isChecked = false
-            b.radioButtonPokemon0.isChecked = false
+            b.radioButtonPokemon5.isChecked = true
         }
     }
 
