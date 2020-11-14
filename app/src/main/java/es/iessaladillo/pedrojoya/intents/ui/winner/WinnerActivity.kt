@@ -6,22 +6,22 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import es.iessaladillo.pedrojoya.intents.data.local.DataSource
 import es.iessaladillo.pedrojoya.intents.data.local.Database
+import es.iessaladillo.pedrojoya.intents.data.local.model.Pokemon
 import es.iessaladillo.pedrojoya.intents.databinding.WinnerActivityBinding
 
 class WinnerActivity : AppCompatActivity() {
-
-    companion object{
-        const val EXTRA_PK_ID = "EXTRA_PK_ID"
-
-        fun newIntent(context: Context, pokemonId: Int): Intent {
-            return Intent(context, WinnerActivity::class.java)
-                .putExtra(EXTRA_PK_ID, pokemonId)
-        }
-    }
-
     private lateinit var b: WinnerActivityBinding
     var bd: DataSource = Database
     private var lista_pokemon = bd.getAllPokemons()
+
+    companion object{
+        const val EXTRA_PK = "EXTRA_PK"
+
+        fun newIntent(context: Context, pokemon: Pokemon): Intent {
+            return Intent(context, WinnerActivity::class.java)
+                .putExtra(EXTRA_PK, pokemon)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +31,10 @@ class WinnerActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
-        var index = intent.getIntExtra(EXTRA_PK_ID, 0)
+        var pokemon = intent.getParcelableExtra<Pokemon>(EXTRA_PK) as Pokemon
 
-        b.imageViewWinner.setImageResource(lista_pokemon[index].drawablePokemon)
-        b.textViewNameWinner.text = lista_pokemon[index].nombre
+        b.imageViewWinner.setImageResource(lista_pokemon[pokemon.index].drawablePokemon)
+        b.textViewNameWinner.text = lista_pokemon[pokemon.index].nombre
     }
 
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simulador de combate de Pokemon</string>
+    <string name="btn_fight">EMPEZAR UN COMBATE</string>
+    <string name="message_rules">Selecciona tu oponente y empieza el combate para ver quien es el ganador.</string>
+    <string name="winner_message">Y EL GANADOR ES...</string>
+</resources>
